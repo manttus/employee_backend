@@ -18,8 +18,14 @@ const employeeSchema = new mongoose.Schema<Employee>({
   ],
   designation: String,
   employeeId: String,
-  joinedDate: Date,
-  endDate: Date,
+  joinedDate: {
+    type: Date,
+    default: Date.now(),
+  },
+  endDate: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 export default mongoose.model("Employee", employeeSchema);
