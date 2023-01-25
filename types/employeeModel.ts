@@ -17,6 +17,6 @@ export interface Employee {
   contact: Types.DocumentArray<String>;
   socialLinks?: Types.DocumentArray<Socials>;
   designation: String;
-  joinedDate: Date;
+  joinedDate?: Date;
   endDate?: Date;
 }

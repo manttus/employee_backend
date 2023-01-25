@@ -1,5 +1,15 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+
+import {
+  addEmployee,
+  employee,
+  employees,
+  updateEmployee,
+} from "../controller/adminController";
 
 const adminRouter = Router();
-
-adminRouter.get("/", (req: Request, res: Response) => {});
+adminRouter.get("/employees", employees);
+adminRouter.get("/employee/:id", employee);
+adminRouter.post("/addEmp", addEmployee);
+adminRouter.patch("/updateEmp/:id", updateEmployee);
+export default adminRouter;
