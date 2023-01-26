@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import adminRouter from "./routes/admin";
 import cors from "cors";
+import employeeRoute from "./routes/employee";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ mongoose.connect(process.env.connect!, (err: mongoose.CallbackError) => {
 });
 
 app.use("/admin", adminRouter);
+app.use("/", employeeRoute);
 
 app.listen(PORT, () => {
   console.log({ message: `Listening to Port ${PORT}` });
