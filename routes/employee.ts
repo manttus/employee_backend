@@ -3,6 +3,6 @@ import { getEmp } from "../controller/empController";
 
 const employeeRoute = Router();
 
-employeeRoute.get("/getEmm/:id", getEmp);
+employeeRoute.get("/getEmp/:id", getEmp);
 
 export default employeeRoute;
